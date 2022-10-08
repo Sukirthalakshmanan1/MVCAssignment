@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MVCAssignment.Models.Product1>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.pid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mfg_Date)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.pid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mfg_Date)
+        </td>
+        <td>
+
+            @Html.ActionLink("Edit Product details", "AddOrderDetails", new { id = item.pid }) |
+            @Html.ActionLink("ShowDetails", "Details", new { id = item.pid }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.pid })
+
+
+             </td>
+    </tr>
+}
+
+</table>

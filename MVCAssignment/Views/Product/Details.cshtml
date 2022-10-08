@@ -1,0 +1,51 @@
+﻿@model MVCAssignment.Models.Product1
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product1</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.pid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mfg_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mfg_Date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "NowEditOrderDetails", new { id = Model.pid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
